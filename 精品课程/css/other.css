@@ -1,0 +1,14 @@
+.container .commens-left{
+	height: 550px;
+}
+.container .commens-right{
+	height:550px;
+	overflow: hidden;
+	border-top:2px solid #C3BFBF;
+}
+.container .commens-right div{
+			overflow: auto;
+			padding-bottom: 2020px;
+			overflow: scroll;
+			margin-top: 2em;
+		}

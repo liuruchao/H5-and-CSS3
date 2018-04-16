@@ -1,0 +1,327 @@
+*{
+	margin:0;
+	padding:0;
+}
+/*头部*/
+.header{
+	height:100px;
+	border-top:2px solid black;
+}
+.header div{
+  width: 1100px;
+  margin:10px auto 0;
+}
+.header img:first-of-type{
+  height: 100%;
+}
+.header img:nth-of-type(2){
+  float:right;
+  margin-right: 3em;
+}
+/*导航栏*/
+.nav{
+	height: 50px;
+	background:black;
+}
+.nav ul{
+	height:100%;
+	width: 1100px;
+	margin:auto;
+}
+.nav ul li{
+	list-style: none;
+	display: inline-block;
+	width: 13%;
+  color:white;
+}
+.nav ul li a{
+	text-decoration: none;
+	color:white;
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+	line-height: 50px;
+}
+/*二级菜单*/
+.nav .list{
+  position: relative;
+}
+.nav .list ul{
+  position: absolute;
+  left:0;
+  bottom:-50px;
+  display: none;
+}
+.nav .list:hover ul{
+  display: block;
+  transition: all 1s linear;
+}
+.nav .list ul li{
+  display: block;
+  background: black;
+  margin:1px 0;
+}
+.nav ul .nub1{
+	background:red;
+}
+.nav ul a:hover{
+	background:red;
+	transition: all 0.5s;
+}
+/*主体内容*/
+.container{
+	width: 1100px;
+	margin:25px auto;
+}
+  /*第一部分*/
+.container .page1{
+	margin:25px 0;
+}	
+  /*第一部分左侧轮播图*/
+
+.container .page1 .show{
+	width: 650px;
+	height:450px;
+	float:left;
+	margin-right: 10px;
+
+}
+.container .page1 .show img{
+	width: 650px;
+	height:100%;
+	border-radius: 10px;
+  }
+/*第一部分右课程概述内容*/
+.container .course div{
+  border-bottom:1px dashed #CCBFBF; 
+  padding-bottom: 1em;
+}
+.container .course div:after{
+  content: '';
+  display: block;
+  clear:both;
+}
+.container .course h2{
+  float:left;
+}
+.container .course h4{
+  float:right;
+}
+.container .course:hover h4{
+  color:red;
+}
+h2:before{
+  content:'';
+  height: 20px;
+  width: 5px ;
+  background: red;
+  margin-right:10px;
+  display: inline-block;
+
+}
+.container .course p{
+  margin:1em 0;
+  text-indent: 2em;
+  text-overflow: hidden;
+  line-height: 1.5;
+  font-size: 20px;
+  word-break: break-all;
+  text-align: justify;
+}
+.container .page1 .course{
+	height: 450px;
+	overflow: hidden;
+  color:grey;
+  box-sizing: border-box;
+  padding:1em 2em;
+  cursor: pointer;
+}
+/*第二部分*/
+ .page2 .left{
+      width: 350px;
+      margin-right:10px;
+      padding:1em;
+      float:left;
+}
+.page2 .center{
+	 width: 350px;
+      height:400px;
+      margin-right:10px;
+      float:left;
+      paddign:1em;
+}
+.page2 .right{
+	height:400px;
+	overflow: hidden;
+  padding:1em;
+}
+/*公共样式*/
+  /*导航*/
+  .commen .page2_top span{
+  text-align: left;
+  font-size: 20px;
+  color:black;
+  padding-left: 1em;
+  border-left: 5px solid red;
+}
+.commen .page2_top a{
+  text-decoration: none;
+  color:red;
+  float: right;
+}
+.commen .page2_top{
+  border-bottom:1px solid #CCBFBF;
+   padding-bottom:10px;
+}
+.commen p{
+   border-bottom:1px dashed #CCBFBF;
+   padding:15px 0px;
+}
+.commen p a{
+  display: block;
+  text-decoration: none;
+  color:#575353;
+}
+.commen p:hover{
+   background: #EBE9E9;
+   border:none;
+}
+.commen p:hover a{
+  color:#454343;
+  font-size: 18px;
+}
+.commen img{
+  margin-top: 1em;
+}
+
+.page2:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.container h3{
+	padding-left: 5px;
+	position: relative;
+	top:18px;
+	left:100px;
+	border-left:5px solid red;
+}
+/*第三部分*/
+.page3{
+            width:1100px;
+            min-height:150px;
+            border-top:1px dotted;
+            border-bottom:1px dotted;
+            margin:10px auto;
+            overflow:hidden;
+        }
+        .page3 a{
+            display: inline-block;
+            width:14%;
+            height:100%;
+            float:left;
+            text-decoration: none;
+            color:black;
+            border:1px solid;
+
+        }
+        .page3 .list img{
+            box-sizing:border-box;
+            width: 100px;
+            height:100%;
+            padding:5px;
+            display: inline-block;
+            float: left;
+            border-radius: 50%;
+          
+        }
+        .page3 .list p{
+            -ms-writing-mode:tb-rl;
+            writing-mode:vertical-rl;
+            padding-left:13px;
+            padding-top:20px;
+            letter-spacing:5px;
+            font-weight: bolder;
+            letter-spacing: 0.5em;
+        }
+        /*向左转*/
+       .page3 .btn1{
+        position: absolute;
+        width: 10%;
+        height:100%;
+        background:rgba(0,0,0,0.6);
+        left:0px;
+        display: none;
+       }
+       .page3 .btn1 i{
+        position: absolute;
+        top:40%;
+        left:5px;
+       }
+       /*向右转*/
+       .page3 .btn2{
+        position: absolute;
+        width: 10%;
+        height:100%;
+        background:rgba(0,0,0,0.6);
+        right:0px;
+        display: none;
+       }
+       .page3 .btn2 i{
+        position: absolute;
+        top:40%;
+        right:5px;
+       }
+       .page3:hover div{
+        display: block;
+       }
+
+
+
+/*尾部*/
+.footer{
+	line-height: 80px;
+	background: #2E2D2D;
+	text-align: center;
+	color: white;
+}
+/*蒙层*/
+.mask{
+  position: fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  background: rgba(0,0,0,0.5);
+  z-index: 2;
+  display: none;
+}
+.mask .overView{
+  height: 500px;
+  width: 500px;
+  border-radius: 10px;
+  background:white;
+  margin: 2em auto;
+  padding:2em;
+  box-shadow: 2px 2px 6px black;
+}
+.mask .overView p{
+  margin:0.5em 0 1em;
+  text-indent: 2em;
+  text-overflow: hidden;
+  line-height: 1.5;
+  font-size: 20px;
+  word-break: break-all;
+  text-align: justify;
+  letter-spacing: 0.1em;
+
+}
+/*蒙层动画*/
+@keyframes box{
+        0%{
+          transform: scale(0.1);
+        }
+        100%{
+          transform:scale(1);
+        }
+     }

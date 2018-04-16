@@ -1,0 +1,37 @@
+.container p{
+			text-indent: 2em;
+			font-size: 20px;
+			font-weight: bolder;
+			text-align: justify;
+		}
+		.container table{
+			display: block;
+			width: 600px;
+			border:1px solid #D3CACA;
+			margin:2em auto;
+			border-radius: 10px;
+			border-collapse: collapse;
+			text-align: center;
+		}
+		.container table tr{
+			width: 600px;
+			display: block;
+			line-height: 32px;
+		}
+		.container table tr:nth-of-type(odd){
+			background: #D3CACA;
+		}
+		.container table tr td:first-of-type{
+			width: 100px;
+			margin-right: 2em;
+		}
+		.container table tr td:nth-of-type(2){
+			width: 380px;
+		}
+		.footer{
+			position: absolute;
+			left:0;
+			right:0;
+			outline:9999px solid #2E2D2D;
+			clip:rect(0 9999px 9999px 0);
+		}

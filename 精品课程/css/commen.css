@@ -1,0 +1,155 @@
+*{
+	margin:0;
+	padding:0;
+}
+/*头部*/
+.header{
+	height:100px;
+	border-top:2px solid black;
+}
+.header div{
+  width: 1100px;
+  margin:10px auto 0;
+}
+.header img:first-of-type{
+  height: 100%;
+}
+.header img:nth-of-type(2){
+  float:right;
+  margin-right: 3em;
+}
+/*导航栏*/
+.nav{
+	height: 50px;
+	background:black;
+}
+.nav ul{
+	height:100%;
+	width: 1100px;
+	margin:auto;
+}
+.nav ul li{
+	list-style: none;
+	display: inline-block;
+	width: 13%;
+}
+.nav ul li a{
+	text-decoration: none;
+	color:white;
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+	line-height: 50px;
+}
+.nav ul a:hover{
+	background:red;
+	transition: all 0.5s;
+}
+/*默认选中颜色*/
+.nav .nub1{
+	background: red;
+}
+/*二级菜单*/
+.nav .list{
+  position: relative;
+}
+.nav .list ul{
+  position: absolute;
+  left:0;
+  bottom:-50px;
+  display: none;
+}
+.nav .list:hover ul{
+  display: block;
+  transition: all 1s linear;
+}
+.nav .list ul li{
+  display: block;
+  background: black;
+  margin:1px 0;
+}
+/*主体*/
+.container{
+	width: 1100px;
+	margin:1em auto 1em;
+}
+.container>img{
+	width: 100%;
+	height:200px;
+	clear:both;
+	display: block;
+	margin-bottom: 10px;
+}
+/*左侧导航区*/
+.container .commens-left{
+	width: 300px;
+	float:left;
+	box-shadow: 2px 0 2px grey;
+	box-sizing: border-box;
+	padding:1em;
+	margin-right: 2em;
+}
+.container .commens-left h2{
+	text-align: center;
+	color:white;
+	background: #4A7CEE;
+	padding:5px;
+}
+.container .commens-left a{
+	text-decoration: none;
+	color: #575555;
+	position: relative;
+	padding-bottom: 5px;
+}
+.container .commens-left p{
+	line-height: 2.5em;
+	width: 100%;
+	
+}
+/*交互效果*/
+.container .commens-left a:before{
+	content:'';
+	position: absolute;
+	top:0;
+	left:0;
+	width: 0;
+	height:100%;
+	border-bottom:2px solid #4A7CEE;
+	
+}
+.container .commens-left a:hover:before{
+	width:100%;
+	transition: width 0.5s linear;
+}
+.container .commens-right{
+	box-sizing: border-box;
+	position: relative;
+}
+.container .commens-right div{
+	position: absolute;
+	width: 100%;
+	height:100%;
+	box-sizing: border-box;
+	padding:1em;
+	background: white;
+}
+.container #page1{
+  z-index: 1;
+
+}
+.container .commens-right div:target{
+	z-index:2;
+}
+.container .commens-right div:not(:target){
+	z-index:0;
+}
+.container .commens-right pre{
+	font-size: 16px;
+}
+/*尾部*/
+.footer{
+	line-height: 80px;
+	background: #2E2D2D;
+	text-align: center;
+	color: white;
+}

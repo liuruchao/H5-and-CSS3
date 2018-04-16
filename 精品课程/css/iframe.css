@@ -1,0 +1,11 @@
+.container .commens-left{
+	height: 750px;
+}
+.container .commens-right{
+	height:750px;
+	overflow: hidden;
+}
+.container .commens-right div iframe{
+			width: 100%;
+			height:750px;
+		}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>习题练习</title>
+	<link rel="stylesheet" href="../css/commen.css">
+	<link rel="stylesheet" href="../css/iframe.css">
+</head>
+<body>
+	<div class="header">
+		<div>
+		<img src="../images/logo.jpg" alt="logo">
+		<img src="../images/logo2.jpg" alt="">
+	    </div>
+	</div>
+	<div class="nav">
+		<ul>
+			<li><a href="../index.html" >网站首页</a></li>
+			<li class="list"><a>申报表</a>
+				<ul>
+					<li><a href="../fills/长治学院优秀课程申报表2016 - 副本.pdf" target="_blank">查看报表</a></li>
+					<li><a href="../fills/长治学院优秀课程申报表2016.doc">点击下载</a></li>
+				</ul>
+			</li>
+			<li><a href="teacher.html" target="_blank">师资队伍</a></li>
+			<li><a href="teaching.html">教学大纲</a></li>
+			<li class="list"><a>实验实训</a>
+                  <ul>
+					<li><a href="test.html">实验内容</a></li>
+					<li><a href="practice.html">网络实训</a></li>
+				</ul>
+			</li>
+			<li><a href="courseware.html">电子教案</a></li>
+			<li><a class="nub1">习题练习</a></li>
+		</ul>
+	</div>
+	<div class="container">
+		<img src="../images/top1.jpg" alt="top">
+		<div class="commens-left">
+			<h2>习题集</h2>
+			<p><a href="#page1" class="num1">2009到2012考研选择题真题</a></p>
+			<p><a href="#page2">第1章习题集</a></p>
+			<p><a href="#page3">第2章习题集</a></p>
+			<p><a href="#page4">第3章习题集</a></p>
+			<p><a href="#page5">第4章习题集</a></p>
+			<p><a href="#page6">第5章习题集</a></p>
+			<p><a href="#page7">第6章习题集</a></p>
+			<p><a href="#page8">第7章习题集</a></p>
+		</div>
+		<div class="commens-right">
+           <div id="page1">
+           	<iframe src="../fills/习题/2009到2012计算机网络历年考研选择题真题加解析.pdf" frameborder="0"></iframe>
+           </div>
+           <div id="page2"><iframe src="../fills/习题/第1章习题集.pdf" frameborder="0"></iframe></div>
+           <div id="page3"><iframe src="../fills/习题/第2章习题集.pdf" frameborder="0"></iframe></div>
+           <div id="page4"><iframe src="../fills/习题/第3掌习题集.pdf" frameborder="0"></iframe></div>
+           <div id="page5"><iframe src="../fills/习题/第4章习题集.pdf" frameborder="0"></iframe></div>
+           <div id="page6"><iframe src="../fills/习题/第5章习题集.pdf" frameborder="0"></iframe></div>
+           <div id="page7"><iframe src="../fills/习题/第6章习题集.pdf" frameborder="0"></iframe></div>
+           <div id="page8"><iframe src="../fills/习题/第7章习题集.pdf" frameborder="0"></iframe></div>
+		</div>
+	</div>
+		<div class="footer">
+		©2018-长治学院版权所有
+	</div>
+	<script>
+		var play=document.getElementsByClassName('commens-left')[0];
+		play.onclick=function(event){
+			
+			var t=event.target;
+			if(t.nodeName=='A'){
+				var nums=play.getElementsByTagName('a');
+				for(let i=0,len=nums.length;i<len;i++){
+					nums[i].style.borderBottom='none';
+				}
+				t.style.borderBottom='2px solid #4A7CEE';
+			}
+		}
+		
+	</script>
+</body>
+</html>
