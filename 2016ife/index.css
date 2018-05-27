@@ -1,0 +1,339 @@
+*{
+	padding:0;
+	margin:0;
+}
+.container{
+	min-width: 1200px;
+}
+/*****************页面头部*****************/
+.container>header{
+	line-height: 60px;
+	background:#2189C0;
+	color:white;
+	padding:0 2em;
+}
+/*头部logo*/
+.container>header>.logo{
+	font-size:30px;
+
+}
+/*搜索框*/
+.container>header>.search{
+     float:right;
+}
+.container>header>.search>input{
+	display: inline-block;
+	outline: none;
+	border:none;
+	border-radius:30px 30px;
+	height:30px;
+	width: 300px;
+	margin-right:1em;
+	font-size: 20px;
+	padding-left:2em;
+	box-sizing:border-box;
+	vertical-align: middle;
+}
+.container>header>.search>.search-logo{
+	color:#2189C0;
+	position: absolute;
+	margin-top:1.5em;
+	margin-left:1em;
+}
+/******************内容区域********************/
+.container>main{
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+}
+/*左侧导航*/
+.container>main>.left-nav{
+	background: #2B2E3D;
+	color:#4D5A6A;
+	min-height:800px;
+}
+ /*导航中头像用户*/
+ .left-nav .user{
+ 	display: flex;
+ 	justify-content: space-around;
+ 	align-items: center;
+ 	flex-direction: column;
+ }
+ .left-nav .user>.logo>span:first-of-type{
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      border:2px solid #B9BABE;
+      padding:5px;
+      border-radius:50%;
+      background: #B9BABE;
+      background-clip: content-box;
+      box-sizing: border-box;
+      vertical-align: middle;
+      margin:2em 1em 2em 0;
+ }
+  /*导航中收藏粉丝*/
+ .left-nav>.user>.num>span{
+       display: inline-block;
+       margin:0 1em 2em;
+ }
+ /*导航中选项*/
+ .left-nav .list{
+ 	list-style:none;
+ }
+ .left-nav>.list>li{
+   position: relative;
+ }
+ .left-nav>.list a{
+ 	display: block;
+ 	line-height: 50px;
+ 	color:#4D5A6A;
+ 	text-decoration: none;
+ 	font-size: 14px;
+ 	font-weight: 700;
+ 	text-align:center;
+ }
+ .left-nav>.list a:hover{
+ 	color:white;
+ }
+ /*列表项*/
+ .left-nav>.list .sec-list{
+ 	display: none;
+ }
+ .left-nav>.list .sec-list li{
+ 	line-height: 30px;
+ 	color:#4D5A6A;
+    font-size: 14px;
+ 	font-weight: 700;
+ 	text-align:center;
+ }
+ .left-nav>.list .sec-list>li>ul{
+ 	text-indent: 2em;
+ 	display: none;
+ }
+ /*选中后样式*/
+ .left-nav>.list .select{
+ 	color:white;
+ }
+ .left-nav>.list .sec-list .select{
+ 	color:white;
+ }
+ .left-nav>.list .bg-select{
+ 	background: #383E4E;
+ }
+
+ /*右侧内容*/
+ .container>main>.right-section{
+ 	background: #EEEEEE;
+ }
+ /*面包屑导航*/
+ .right-section>.sec-nav{
+ 	background: white;
+ 	line-height: 2;
+ 	color:#767171;
+ 	font-size: 14px;
+ 	font-weight: 700;
+ 	padding-left:2em;
+ }
+ .right-section>.sec-nav>span{
+ 	color:#2189BE;
+ }
+ /*右侧内容主体*/
+ .right-section>.box{
+ 	padding:20px 40px;
+ 	display: grid;
+ 	grid-template-columns: 1fr;
+ 	grid-gap: 20px;
+ }
+ .box>div>div{
+    background: white;
+ }
+ /*查询项*/
+ .box>.search-item{
+ 	display: grid;
+ 	grid-template-columns: repeat(5,1fr);
+ 	border:1px solid #B8B4B4;
+ 	grid-auto-rows: 85px;
+ 	color:#B8B4B4;
+ 	font-size:14px;
+ 	font-weight: 700;
+
+ }
+ .search-item .items{
+   	padding:10px 5px;
+ }
+ .search-item .items>input{
+ 	width: 50%;
+ 	display: inline-block;
+ 	margin:5px;
+ 	color:black;
+ }
+ .search-item .items>span{
+ 	margin:5px;
+ }
+ .search-item .items>button{
+ 	background: #2189BE;
+ 	color:white;
+ 	width: 60px;
+ 	height: 20px;
+ 	border:none;
+ 	margin-top:10px;
+ }
+ /*历史查询*/
+ .box>.time{
+ 	display: flex;
+ 	justify-content: space-between;
+ 	height:64px; 
+ }
+ .box>.time>.items{
+ 	flex:1 1 auto;
+ 	border:1px solid #B8B4B4;
+ 	background: white;
+ 	margin-right: 5px;
+ 	display: inline-flex;
+ 	justify-content:space-around;
+ 	align-items:center;
+ 	flex-direction:column;
+ 	position: relative;
+ }
+ /*上划高亮线*/
+ .box>.time>.items:nth-of-type(2):after{
+   content:'';
+   position: absolute;
+   width: 100%;
+   height: 4px;
+   left:0;
+   top:0;
+   background: #2189C0;
+ }
+ .box>.time>.items>span:first-of-type{
+ 	font-size:12px;
+ 	font-weight: 700;
+ }
+ .box>.time>.items>span:nth-of-type(2){
+ 	font-size:22px;
+ 	color:#EB6502;
+ }
+ .box>.time>.items:last-of-type{
+ 	font-size:18px;
+ }
+  /*历史查询中箭头*/
+  .box>.time>.direction{
+        max-width: 28px;
+        font-size:20px;
+  }
+/*统计*/
+.box>.count{
+	display: grid;
+	grid-template-columns:repeat(4,1fr);
+	grid-column-gap: 30px;
+	grid-auto-rows: 70px;
+}
+.box>.count>.items{
+	border:1px solid #B8B4B4;
+	background: white;
+	padding:10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	position: relative;
+}
+.box>.count>.items>span{
+	color:#B8B4B4;
+	font-size:12px;
+}
+.box>.count .color-block{
+	height: 100%;
+	width: 70px;
+	background:#43B29F; 
+}
+/*左侧高亮线*/
+.box>.count>.items:after{
+	position: absolute;
+	content:'';
+	height: 100%;
+	width:4px;
+	left:0;
+	top:0;
+	background:#43B29F;
+}
+/*项目*/
+.box>.item{
+   display:grid;
+   grid-template-columns:3fr 2fr;
+   grid-auto-rows:355px;
+   grid-column-gap: 20px;
+}
+.box>.item>.items{
+	border:1px solid #B8B4B4;
+	border-radius:10px;
+	background: white;
+}
+.box>.item h3{
+	line-height: 40px;
+	padding-left:2em;
+	font-size:14px;
+	color:#B8B4B4;
+	background: #F4F5F7;
+	border-radius:10px  10px 0 0;
+}
+/*项目中表格*/
+.box>.item .table{
+	padding:20px;
+}
+.box>.item .table>ul>li{
+	display: inline-block;
+	line-height: 27px;
+	text-align: center;
+	background: #EDECF1;
+	font-size:12px;
+	width:85px;
+}
+.box>.item .table>.wrap{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	border:1px solid #B8B4B4;
+	height: 250px;
+}
+.box>.item .wrap table{
+	border-collapse:collapse;
+	border:1px solid #B8B4B4;
+}
+.box>.item .wrap td{
+	width: 100px;
+	line-height: 30px;
+	text-align:center;
+	font-size:12px;
+	border:1px solid #B8B4B4;
+}
+.box>.item .wrap tr:first-of-type>td:first-of-type{
+	background: #EDECF1;
+}
+/*项目中描述*/
+.box>.item .dec h6{
+	font-size:12px;
+	color:#B8B4B4;
+	text-indent: 2em;
+	line-height: 1.8;
+}
+.box>.item .dec p{
+	font-size:12px;
+	text-indent: 2em;
+}
+.box>.item .dec div:first-of-type span{
+	display: inline-block;
+}
+.box>.item .dec div:first-of-type span:first-of-type{
+	width:94px;
+	height: 44px;
+	border-right:1px solid #B8B4B4;
+}
+.box>.item .dec div{
+	border:1px solid #B8B4B4;
+	border-left:none;
+	border-right:none;
+	margin:20px 0;
+}
+.box>.item .dec div:last-of-type{
+	height: 120px;
+}
