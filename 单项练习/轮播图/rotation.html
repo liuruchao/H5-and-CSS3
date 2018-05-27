@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图二</title>
+	<style>
+	    *{
+	    	padding:0;
+	    	margin:0;
+	    }
+		.wrap_container{
+			width: 600px;
+			height: 300px;
+			margin:auto;
+			position: relative;
+			overflow: hidden;
+		}
+		/*展示界面*/
+		.box{
+			height: 100%;
+			left:0;
+			right:0;
+			position: absolute;
+
+		}
+		.box img{
+			float: left;
+			height: 100%;
+		}
+		/*按钮*/
+		.btn div{
+			width: 30px;
+			height: 100px;
+			background: #81B7F0;
+			color:white;
+			position: absolute;
+			text-align: center;
+			opacity: 0.7;
+		}
+		/*上一页*/
+		.btn .btn-pre{
+			left:0;
+			top:50%;
+			transform: translate(0,-50%);
+			border-radius: 0 10px 10px 0;
+		}
+		/*下一页*/
+		.btn .btn-next{
+			right:0;
+			top:50%;
+			transform: translate(0,-50%);
+			border-radius: 10px 0 0 10px;
+		}
+		.btn div:hover{
+			opacity: 1;
+		}
+	</style>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<div class="wrap_container">
+		<!-- 展示区 -->
+		<div class="box">
+			<img src="images/1.jpg" alt="">
+			<img src="images/3.jpg" alt="">
+			<img src="images/4.jpg" alt="">
+		</div>
+        <!-- 前后按钮 -->
+        <div class="btn">
+        	<div class="btn-pre">上一页</div>
+        	<div class="btn-next">下一页</div>
+        </div>
+	</div>
+</body>
+<script>
+	$(function(){
+		// 展示区宽度
+		var width=$(".wrap_container").width();
+		//展示图个数
+		var counts=$(".box>img").length;
+		// 脚本动态控制展示区图片宽度
+		  //设置宽度
+		$(".box").width(counts*100+'%');
+		  //取宽度
+		var boxWidth=$(".box").width();
+		var imgWidth=boxWidth/counts;
+		$(".box img").width(imgWidth);
+
+        var num=1;
+         //自动播放
+         function autoPlay(){
+         	if(num==counts){
+         		$(".box").animate({
+         			left:'0'
+         		});
+         		num=1;	
+         		
+         	}else{
+         			$(".box").animate({
+         		left:'-='+width+'px'
+         	});
+         	 num++;
+         	};
+         };
+         var timer=setInterval(autoPlay,2000);
+
+         //下一页
+         $(".btn-next").click(function(){
+            if(counts==num){
+               $(".box").animate({
+               	left:"0"
+               });
+               num=1;
+            }else{
+            	$(".box").animate({
+         		left:'-='+width+'px'
+         	});
+         	 num++;
+            }
+         	
+          });
+         //上一页
+         $(".btn-pre").click(function(){
+         	if(num==1){
+         		$(".box").animate({
+         			left:'-'+width*(counts-1)+'px'
+         		});
+         	  num=counts;
+         	}else{
+         		$(".box").animate({
+         		left:'+='+width+'px'
+         	});
+         		num--;
+         	}
+         	
+         });
+
+         //鼠标放到按钮上时
+
+         $(".btn div").hover(function(){
+         	clearInterval(timer);
+
+         },function(){
+         	
+         })
+	});
+</script>
+</html>

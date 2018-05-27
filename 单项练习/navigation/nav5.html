@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>responsive</title>
+	<meta name="viewport" content="width=device-width">
+	<style>
+	    *{
+	    	padding:0;
+	    	margin:0;
+	    }
+		/*宽屏导航列表*/
+		 /*一级菜单*/
+		.nav-list{
+			background:#343434;
+		}
+        .nav-list>ul>li{
+        	display:inline-block;
+        }
+        @media all and (max-width: 600px){
+
+        	.nav-list{
+        		display: none;
+        	}
+        	.nav-list>ul>li{
+        		display:block;
+        	}
+        	.nav-btn{
+        		display: block;
+        		background: #343434;
+        	}
+        	.nav-btnWrap{
+        		height:50px;
+        		background:#343434;
+        	}
+        	/*二级菜单*/
+        	.sec-menu{
+        		position: static;
+        		width: 100%;
+        	}
+        }
+        /*公用a标签样式*/
+        .nav-list ul a{
+        	display:block;
+        	padding:1em;
+        	color:white;
+        	text-decoration:none;
+        }
+        /*默认选择样式*/
+        .active{
+        	background: black;
+        }
+        .nav-list li:hover{
+        	background: black;
+        }
+        .nav-list>ul>li:hover .sec-menu{
+           display: block;
+        }
+        /*二级菜单*/
+        .sec-menu{
+        	background: #797777;
+        	list-style:none;
+        	display: none;
+        }
+        .sec-menu>li{
+            display: block;
+            width:100%;
+        }
+        .sec-menu li a{
+        	width: 100%;
+        	box-sizing: border-box;
+        }
+        /*小屏导航按钮*/
+        .nav-btn{
+        	outline: 2px solid white;
+        	position: absolute;
+        	top:10px;
+        	right:1em;
+        	margin-bottom:10px;
+        }
+        .nav-btn>span{
+        	display: block;
+        	width: 30px;
+        	height: 3px;
+        	margin:5px 3px;
+        	background:white;
+        }
+        @media all and (min-width: 600px){
+        	.nav-btn{
+        		display: none;
+        	}
+        	.sec-menu{
+        		position: absolute;
+        		width:100px;
+        	}
+
+        }
+	</style>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<header>
+	  <div class="header-inner">
+	  	<!-- 导航按钮 -->
+	  	<div class="nav-btnWrap">
+		<div class="nav-btn" id="nav-btn">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		</div>
+	  	<!-- 导航列表 -->
+		<div class="nav-list">
+			<ul>
+				<li  class="active"><a href="#">home</a></li>
+				<li><a href="#">active</a>
+					<ul class="sec-menu">
+						<li><a href="#">fdsf</a></li>
+						<li><a href="#">fdsfs</a></li>
+						<li><a href="#">fefa</a></li>
+					</ul>
+				</li>
+				<li><a href="#">table</a></li>
+				<li><a href="#">scaler</a></li>
+				<li><a href="#">asterl</a></li>
+			</ul>
+		</div>
+	  </div>
+	</header>
+</body>
+<script>
+	$(window).resize(function(){
+		if($(this).width()<=600){
+			$(".nav-list").hide();
+		}else{
+			$(".nav-list").show();
+		};
+	})
+	$("#nav-btn").click(function(){
+		$(".nav-list").slideToggle();
+	})
+</script>
+</html>

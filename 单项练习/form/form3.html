@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form3</title>
+	<!-- 图标 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+</script>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		body{
+			background:#0F0F0F;
+		}
+		/*主体盒子*/
+        .content{
+        	width: 50%;
+        	min-width: 500px;
+        	margin:auto;
+        }
+        .content>h1{
+            color:white;
+            font-weight:900;
+            font-style: italic;
+        }
+        /*表单盒子*/
+        .box{
+        	padding:2em;
+        }
+        .box>h1{
+        	color:white;
+        	text-align: center;
+        }
+        .box>h1>span{
+        	color:#590B40;
+        }
+        /*表单元素*/
+         /*表单提示语*/
+         .box .wrap_label{
+         	margin:10px 10px 10px 0;
+         }
+         .box .wrap_label>label{
+         	color:white;
+         }
+         /*表单警告语*/
+         .box .wrap_label>span{
+         	font-style: italic;
+         	color:white;
+         }
+         /*表单*/
+         .box input,textarea{
+         	width: 100%;
+         	display: block;
+         	background:white;
+         	border:none;
+         	border-radius:5px;
+         	height:50px;
+         	font-size:20px;
+         	box-sizing: border-box;
+         	padding-left:45px;
+         }
+         .box textarea{
+         	height:150px;
+         	resize:none;
+         	padding:1em;
+         	box-sizing: border-box;
+
+         }
+         /*表单图标*/
+         .box .input_icon{
+            font-size: 30px;
+            position: absolute;
+            margin-top:-40px;
+            margin-left:10px;
+         }
+         /*提交*/
+         #submit{
+         	display: inline-block;
+         	width: 150px;
+         	height: 40px;
+         	color:white;
+         	background:#8F0A65;
+         	margin-top:10px;
+         	font-size:1em;
+         	padding:0;
+         }
+	</style>
+</head>
+<body>
+	<div class="content">
+		<h1>cuntact</h1>
+		<div class="box">
+			<!-- 小标题 -->
+			<h1>Inquiry about a <span>Project</span></h1>
+			<!-- 表单 -->
+			<form action="" method="psot">
+				<!-- 用户名 -->
+				<div class="wrap_label">
+					<label for="username">Name:</label>
+					<span class="name_info"></span>
+				</div>
+				<input type="text" id="username">
+				<i class="fa fa-user input_icon"></i>
+				<!-- 邮箱 -->
+				<div class="wrap_label">
+					<label for="email">Email:</label>
+					<span class="email_info"></span>
+				</div>
+				<input type="email" id="email">
+				<i class="fa fa-ioxhost input_icon"></i>
+				<!-- 公司地址 -->
+				<div class="wrap_label">
+					<label for="company">Company:</label>
+					<span class="company_info"></span>
+				</div>
+				<input type="text" id="company">
+				<i class="fa fa-archive input_icon"></i>
+				<!-- 留言 -->
+				<div class="wrap_label">
+					<label for="message">Message:</label>
+					<span></span>
+				</div>
+				<textarea id="message"></textarea>
+				<!-- 提交按钮 -->
+				<input type="submit" value="Send Message" id="submit">
+			</form>
+		</div>
+	</div>
+</body>
+<script>
+	//用户名输入框
+	$("#username").focus(function(){
+		var val=$(this).val();
+		var $span=$(".name_info");
+		if(!val){
+          $span.text("请输入2~6位英文字符").css("color","#F5F348");
+		}
+	}).blur(function(){
+		var val=$(this).val();
+		var $span=$(".name_info");
+		var patter=/^[a-z]{2,6}/i;
+		if (!val) {
+			$span.text("必填项").css("color","red");
+		}else if(patter.test(val)){
+          $span.text(" ").css("color","#F5F348");
+		}else{
+			$span.text("输入有误").css("color","red");
+		}
+	});
+	//邮箱输入框
+	$("#email").focus(function(){
+		var val=$(this).val();
+		var $span=$(".email_info");
+		if(!val){
+          $span.text("请输入正确邮箱地址").css("color","#F5F348");
+		}
+	}).blur(function(){
+		var val=$(this).val();
+		var $span=$(".email_info");
+		if (!val) {
+			$span.text("必填项").css("color","red");
+		}else{
+			$span.text(" ").css("color","red");
+		}
+	});
+	//公司地址输入框
+	$("#company").focus(function(){
+		var val=$(this).val();
+		var $span=$(".company_info");
+		if(!val){
+          $span.text("请输入最近地址").css("color","#F5F348");
+		}
+	}).blur(function(){
+		var val=$(this).val();
+		var $span=$(".company_info");
+		if (!val) {
+			$span.text("必填项").css("color","red");
+		}else{
+			$span.text(" ").css("color","red");
+		}
+	});
+</script>
+</html>

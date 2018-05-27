@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nav3</title>
+	<style>
+	    *{
+	    	padding:0;
+	    	margin:0;
+	    }
+		nav{
+			display: block;
+			padding-left:200px;
+		}
+        #nav3>ul>li{
+        	display: inline-block;
+        	padding:10px 0;
+        	width: 100px;
+        	position: relative;
+        }
+        #nav3>ul>li>a{
+        	color:black;
+        	text-decoration: none;
+        	font-size:1.2em;
+        	text-align:center;
+        	display: inline-block;
+        	width: 100%;
+        }
+        /*二级菜单出现动画*/
+        @keyframes fadeIn{
+        	0%{
+        		transform:scale(0.8);
+        		opacity: 0.7;
+        	}
+        	100%{
+        		transform: scale(1);
+        		opacity: 1;
+        	}
+        }
+        #nav3>ul>li:hover>a{
+        	color:orange;
+        }
+        #nav3>ul>li:hover .sec_menu{
+        	visibility: visible;
+        	animation: fadeIn 0.1s linear;
+
+        }
+
+        /*二级菜单*/
+        .sec_menu{
+        	position: absolute;
+            border:1px solid #ADA9A9;
+            box-shadow: 0px 3px 10px #7C7B7B;
+            border-radius:10px;
+            width: 200px;
+            left:-70%;
+            /*transform:translateX(calc(-50% + 50px));*/
+            /*运用动画出现二级菜单时，位移会在动画结束后进行，导致二级菜单的有明显的移动*/
+            margin-top:10px;
+            list-style: none;
+            padding:1em;
+            visibility: hidden;
+        }
+        /*小三角图标*/
+        .sec_menu:before{
+        	content:'';
+        	position: absolute;
+        	border:10px solid transparent;
+            border-bottom-color:#ADA9A9;
+        	width: 0;
+        	height:0;
+        	left:calc(50% - 10px);
+        	top:-20px;
+        }
+        .sec_menu a{
+        	display:block;
+        	text-align:center;
+        	color:grey;
+        	border-bottom:1px solid grey;
+        	text-decoration: none;
+        	padding:10px;
+
+        }
+        .sec_menu a:hover{
+        	color:white;
+        	background:grey;
+        }
+	</style>
+</head>
+<body>
+	<nav id="nav3">
+		<ul>
+			<li><a href="#">Clincal</a>
+				<ul class="sec_menu">
+					<li><a href="#">cliencals</a></li>
+					<li><a href="#">fsaeffdsf</a></li>
+					<li><a href="#">ewfaceaf</a></li>
+					<li><a href="#">eawefaf</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Billing</a>
+				<!-- <div class="sec_menu"></div> -->
+			</li>
+			<li><a href="#">Marketing</a>
+				<ul class="sec_menu">
+					<li><a href="#">mfasdffds</a></li>
+					<li><a href="#">eafds</a></li>
+					<li><a href="#">feafaf</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Solutions</a></li>
+			<li><a href="#">Products</a></li>
+		</ul>
+	</nav>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test_media</title>
+	<style>
+		.box{
+			background: red;
+			height: 300px;
+		}
+		.box .content{
+			background:green;
+			height: 100px;
+			position: absolute;
+		}
+		@media all and (max-width: 600px){
+		.box .content{
+				background: orange;
+				height: 200px;
+				position: static;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="content">fsadfdfsdfdsf</div>
+	</div>
+</body>
+</html>

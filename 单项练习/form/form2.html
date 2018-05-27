@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form2</title>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		html,body{
+			background:#EEEEEE; 
+			height:100%;
+			box-sizing: border-box;
+			padding-top:1em;
+		}
+		.wrap{
+			width: 30%;
+			background: white;
+			min-width: 360px;
+			padding:3em 2em;
+			margin:2em auto;
+			border-radius:5px;
+			box-shadow: 0 0 5px #797474;
+		}
+		.wrap>h1{
+			font-weight: 700;
+		}
+		/*表单*/
+		.wrap_form{
+			margin:2em 0;
+		}
+		.wrap_input{
+			box-sizing: border-box;
+			position: relative;
+		}
+		/*表单提示文字*/
+		.wrap_input label{
+			position: absolute;
+			color:#615E5E;
+			transition:all 0.5s linear;
+
+		}
+		.wrap_input input{
+			display: block;
+			height: 40px;
+			width: 100%;
+			margin:20px 0 0 0;
+			font-size:18px;
+			border: none;
+			outline: none;
+			border-bottom:1px solid #8A8686;
+		}
+		/*提交按钮*/
+		.wrap_form .submit{
+			margin-top:40px;
+			border:none;
+			display: block;
+			height: 50px;
+			width: 100%;
+			font-size:18px;
+			display: block;
+			background: #0D8AEE;
+			color:white;
+			border-radius:10px;
+			outline: none;
+		}
+		/*提交按钮动画*/
+		@keyframes change{
+			0%{
+				transform:scale(1);
+			}
+			100%{
+				transform: scale(1.1);
+			}
+		}
+		.change{
+			animation-name: change;
+			animation-direction: alternate;
+			animation-timing-function: linear;
+			animation-duration: 0.8s;
+			animation-iteration-count:infinite;
+		}
+		/*光标聚焦后的下滑线*/
+		.wrap_input span{
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			background: #1E81D0;
+			margin-top:-3px;
+			transform-origin: left;
+			transform:scale(0);
+			transition:all 0.5s linear;
+		}
+	</style>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<h1>Login</h1>
+        <form class="wrap_form">
+        	<!-- 用户名 -->
+        	<div class="wrap_input">
+        		<label for="username">USERNAME</label>
+        		<input type="text" id="username">
+        		
+        		<span></span>
+        	</div>
+        	<!-- 密码 -->
+        	<div class="wrap_input">
+        		<label for="password">PASSWORD</label>
+        		<input type="text" id="password">
+        		
+        		<span></span>
+        	</div>
+        	<!-- 提交 -->
+        	<div>
+        		<input type="submit" class="submit" value="submit">
+        	</div>
+        </form>
+	</div>
+</body>
+<script>
+	$(function(){
+		$(".wrap_input input").focus(function(){
+			$(this).next().css({"transform":"scale(1)"}); //下滑线元素
+			if(!$(this).val()){
+				$(this).siblings("label").css({"transform":"translate(0,-10px)","fontSize":"12px"});  //表单提示语
+			}
+		}).blur(function(){
+			
+				$(this).next().css("transform","scale(0)");
+			   if(!$(this).val()){
+			   	 $(this).siblings("label").css({"transform":"translate(0,0)","fontSize":"16px"});
+			   }else{
+			   	//提交表单动画
+                  if($(".wrap_input:first input").val() && $(".wrap_input:last input").val()){
+                  	$(".submit").addClass("change");
+                  }else{
+                  	$(".submit").removeClass("change");
+                  }
+			   }
+		}).keyup(function(){
+			if(!$(this).val()){
+			   	 $(this).siblings("label").css({"fontSize":"16px","transform":"translate(0,0)"});
+			   }else{
+			   	 $(this).siblings("label").css({"transform":"translate(0,-10px)","fontSize":"12px"});
+			   }
+		});
+	})
+</script>
+</html>

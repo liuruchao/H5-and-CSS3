@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nav1</title>
+	<style>
+	    *{
+	    	padding:0;
+	    	margin:0;
+	    }
+	    body{
+	    	background:#003366;
+	    }
+	    .top{
+	    	height:200px;
+	    }
+		nav{
+			display:block;
+			background: #012140;
+			box-shadow: 0 5px 18px black,0px 1px 10px -5px black inset;
+		}
+		/*一级菜单*/
+		#nav1>ul>li{
+			display: inline-block;
+		}
+		#nav1 a{
+           display:inline-block;
+           font-size:1.2em;
+           padding:1em;
+           color:white;
+           text-align: center;
+           font-weight:500;
+           text-decoration: none;
+		}
+		#nav1 a:hover{
+			background-image: radial-gradient(ellipse closest-corner,#4D4C4C,#C5C5C5)
+		}
+		/*二级菜单*/
+		.sec_menu{
+			position: absolute;
+			list-style:none;
+			background:#003366;
+			box-shadow: 2px 2px 10px  black;
+			visibility:hidden;
+			box-sizing: border-box;
+		}
+		.sec_menu li{
+			display:block;
+			width: 200px;
+		}
+		#nav1 .sec_menu a{
+			font-size:1em;
+			text-align: center;
+			width:100%;
+			box-sizing: border-box;
+		}
+		.sec_menu a:hover{
+			border:1px solid white;
+		}
+		#nav1>ul>li:hover .sec_menu{
+			visibility: visible;
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+		
+	</div>
+	<nav id="nav1">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About Us</a>
+				<ul class="sec_menu">
+					<li><a href="#">Our Company</a></li>
+					<li><a href="#">chairman and CEO</a></li>
+					<li><a href="#">Known By The Company We Keep</a></li>
+					<li><a href="#">Industry Affiliations and trade Shows</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Employers</a>
+				<ul class="sec_menu">
+					<li><a href="#">Straegic Partnership</a></li>
+					<li><a href="#">Retained Executive Search</a></li>
+					<li><a href="#">
+						Search Process
+					</a></li>
+					<li><a href="#">
+						Request A Consultation
+					</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Candidates</a></li>
+			<li><a href="#">Media</a></li>
+			<li><a href="#">M & A Services</a>
+				<ul class="sec_menu">
+					<li><a href="#">M&A Referral Services</a></li>
+					<li><a href="#">
+						M&A Affiliations
+					</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Contact Us</a></li>
+			<li><a href="#">Join Our Team</a></li>
+		</ul>
+	</nav>
+<!-- 总结：
+1.用到了径向渐变，来实现hover后的样式
+2.absolute跟随性，定位二级菜单
+3.box-shadow阴影：外阴影及内阴影
+4.设置hover的位置若为一级菜单的a会使得出现的二级菜单不能被选中，因为只要光标一离开一级菜单的选项，则二级菜单就消失 -->
+
+</body>
+</html>

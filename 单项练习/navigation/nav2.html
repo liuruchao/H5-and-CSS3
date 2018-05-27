@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nav2</title>
+	<style>
+		nav{
+			display: block;
+			background: #294D61;
+		}
+		#nav2 li{
+			display: inline-block;
+		}
+		#nav2 li a{
+           display:inline-block;
+           padding:1em;
+           color:white;
+           text-decoration:none;
+		}
+	</style>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<nav id="nav2">
+		<ul>
+			<li><a href="#">why us</a></li>
+			<li><a href="#">meet us</a></li>
+			<li><a href="#">services</a></li>
+			<li><a href="#">our process</a></li>
+			<li><a href="#">our work</a></li>
+		</ul>
+	</nav>
+</body>
+<script>
+	$("#nav2 li").mouseover(function(){
+		$(this).find("a").css("color","white");
+		$(this).siblings().find("a").css("color","#5EE3EA");
+	}).mouseout(function(){
+		$("#nav2 a").css("color","white");
+	});
+</script>
+</html>
