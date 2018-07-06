@@ -1,0 +1,267 @@
+*{
+	padding: 0;
+	margin:0;
+	list-style: none;
+	font-size: 16px;
+}
+body{
+	max-width:75rem;
+	background:#1e263c;
+	padding-bottom:1.08rem;
+	/*min-width: 350px;*/
+}
+/******************************头部********************************/
+header{
+	height: 1.16rem;
+	background:#1f2d51;
+	display:flex;
+	justify-content:space-around;
+	align-items: center;
+}
+header>div{
+	height: 0.7rem;
+}
+header .fa{
+	line-height:1;
+	vertical-align: 4px;
+}
+   /*左侧图标*/
+header>.left{
+	width:0.6rem;
+	color:orange;
+	font-size:0.6rem;
+	color:#F4054D;
+}
+  /*中间选项*/
+header>.h_tab{
+	width:5rem;
+	border-radius:0.6rem;
+	border:0.05rem solid #f4054d;
+	background:white;
+	box-sizing:border-box;
+	display:flex;
+	justify-content: center;
+	padding:0.05rem;
+	align-items:stretch;
+}
+header>.h_tab>span{
+	font-size:0.12rem;
+    flex:1;
+    border-radius:0.6rem;
+    text-align:center;
+    margin:0 0.04rem;
+    line-height:0.5rem;
+}
+header>.h_tab>.btn{
+	background:red;
+	color:white;
+}
+   /*右侧图标*/
+header>.right{
+	width:0.6rem;
+	color:orange;
+	font-size:0.6rem;
+}
+/**********************搜索框**************************/
+.search{
+	height:0.9rem;
+	background:#1f2d51;
+	position:relative;
+}
+.search>article{
+	height:0.6rem;
+	width:7rem;
+	background:transparent;
+	position:absolute;
+	left:50%;
+	margin-left:-3.5rem;
+	top:0;
+	border-radius:0.6rem;
+	background-image:linear-gradient(to right,#8452d5,#ea2189);
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+.search .input{
+	width:6.8rem;
+	height:0.5rem;
+	background:linear-gradient(to right,#1f2d51,#1e2641);
+	border-radius:0.55rem;
+	position: relative;
+}
+ /*搜索框图标*/
+.search .input .sea_icon{
+	width:0.35rem;
+	height:0.35rem;
+	display:inline-block;
+	position: absolute;
+}
+ /*左图标*/
+.search .l_icon{
+	left:0.2rem;
+	top:0.1rem;
+	background:url(../img/images/index_06.png) no-repeat;
+	background-size:contain;
+}
+/****************************banner轮播图****************************/
+.banner{
+	height: 3.87rem;
+	
+}
+.banner>.swiper-container>.swiper-wrapper>div{
+	height: 3.87rem;
+	background:red;
+}
+.banner>.swiper-container>.swiper-wrapper>div>img{
+	width: 100%;
+	height:100%;
+}
+/***********************音乐选项**********************************/
+.nav_list{
+	margin-top:0.4rem;
+}
+.nav_list>ul:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.nav_list li{
+	float:left;
+	width:calc(100% / 4);
+	height: 2.56rem;
+	text-align: center;
+}
+.nav_list li img{
+	width: calc(100% - 0.36rem);
+	margin:0 0.18rem;
+	display: block;
+}
+.nav_list li span{
+	margin:auto;
+	text-align: center;
+	font-size:0.2rem;
+	color:white;
+	text-align: center;
+	line-height: 3.8;
+	display: inline-block;
+}
+/*************************歌手部分*******************/
+.singer{
+	height: 6rem;
+	background: url(../img/images/bg_singer.png) no-repeat;
+	background-size: contain;
+	background-position:0 100%;
+}
+.singer>img{
+	display: block;
+	margin:auto;
+	width: 4rem;
+
+}
+.singer>article{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-rows: 2.7rem; 
+}
+.singer>article img{
+	height:1.7rem;
+	display: block;
+	margin:auto;
+}
+/*********************play播放栏************************/
+.play{
+	height:1.08rem;
+	position:fixed;
+    width:100%;
+    left:0;
+    bottom:0;
+    margin-top: 1.08rem;
+    background:#1e263c;
+}
+ /*进度条*/
+.play>.progress{
+	background: white;
+}
+.play>.progress>.linear{
+	width:0;
+	background: red;
+	height: 0.09rem;
+	box-sizing: border-box;
+}
+.play>.progress>.linear_btn{
+   border:0.06rem solid white;
+   border-radius:50%;
+   width:0.04rem;
+   height:0.04rem;
+   position: absolute;
+   /*margin-left:59%;
+   margin-top:-1.5%;*/
+
+}
+/*按键键栏*/
+.play .play_btn{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+    grid-auto-rows: calc(100% - 0.09rem);
+    grid-column-gap: 0.2rem;
+}
+.play .play_btn>div{
+	height: 100%;
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.play .play_btn>.left{
+	justify-content: flex-start;
+	align-self: flex-start;
+ /*歌手海报*/
+}
+.play .play_btn>.left>img{
+	height: 0.99rem;
+	display: block;
+}
+ /*歌手简介*/
+.play .play_btn>.left>.jianjie{
+	color:white;
+	margin-right:0.1rem;
+	margin-top:0.1rem;
+	margin-left:0.2rem;
+	width:
+}
+.play .left>.jianjie>h5{
+   font-size: 0.25rem;
+}
+.play .left>.jianjie>span{
+	font-size:0.2rem;
+ /*控制按钮*/
+}
+.play .right{
+	padding:0 0.2rem;
+}
+.play .right>*{
+  height:0.4rem;
+  display: block;
+}
+.play .right .iconfont{
+	color:white;
+	font-size: 0.35rem;
+}
+/*歌曲列表*/
+#songList{
+	position: fixed;
+	right:0.2rem;
+	bottom:1.08rem;
+	overflow:auto;
+	height: 0;
+	transition: all 0.4s;
+}
+#songList>li{
+	width:2rem;
+	line-height: 0.5rem;
+	text-align:center;
+	background: rgba(255,255,255,0.7);
+	color:#1e263c;
+	border-bottom:1px solid;
+	font-weight: 700;
+	border-radius:0.1rem;
+}

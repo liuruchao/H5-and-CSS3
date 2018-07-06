@@ -1,0 +1,203 @@
+*{
+	padding:0;
+	margin: 0;
+	font-size:16px;
+}
+body{
+	background:#151b2a;
+}
+/****************头部海报展示**************/
+.banner{
+	height: 7rem;
+	background:url(../img/images/timg.jpg) no-repeat;
+	background-size:cover;
+	background-position: 50% 0;
+	position: relative;
+}
+/*返回键*/
+.banner>.title>.b_icon{
+	position: absolute;
+	margin-left:0.3rem;
+	margin-top:0.35rem;
+	color:white;
+	text-decoration: none;
+}
+.banner>.title .iconfont{
+	font-size:0.4rem;
+}
+/*正在播放*/
+.banner>.title>.ing{
+	color:white;
+	line-height: 1.09rem;
+	text-align: center;
+	font-size:0.3rem;
+}
+/*歌词*/
+.banner>.lyrics{
+	height: calc(100% - 1.25rem - 1.09rem - 0.4rem);
+	overflow: auto;
+	background: rgba(255,255,255,0.5);
+}
+.banner>.lyrics>p{
+	text-align: center;
+	color:#1e263c;
+}
+/*详情页*/
+.details{
+	height: 1.25rem;
+	padding:0.24rem 0.24rem 0;
+	background: rgba(0,0,0,.6);
+	position: absolute;
+	bottom: 0;
+	width:100%;
+	color:white;
+	box-sizing: border-box;
+}
+.details>.songName{
+	float:left;
+	font-size:0.14rem;
+}
+/*评分*/
+.details>.leve{
+	float:right;
+}
+.details>.leve>i,span{
+	font-size:0.14rem;
+}
+/*评分星星*/
+.details>.leve>.iconfont{
+	color: #ffe04d;
+}
+/*歌曲相关信息*/
+.details .singer{
+	display: flex;
+	justify-content: space-between;
+	width:100%;
+}
+.details .singer .iconfont{
+	color:red;
+	font-weight: 700;
+}
+/***************进度条*******************/
+.progress{
+	background: white;
+}
+.progress>.linear{
+	width:0;
+	background: red;
+	height: 0.09rem;
+}
+.progress>.linear_btn{
+   border:0.06rem solid white;
+   border-radius:50%;
+   width:0.04rem;
+   height:0.04rem;
+   position: absolute;
+   margin-left:59%;
+   margin-top:-1.5%;
+
+}
+/*******************控制区**************/
+.control{
+	height: 5.8rem;
+	background: #151b2a;
+	padding:0.14rem 0.24rem;
+}
+/*剩余时间*/
+.control>.timing>span:first-of-type{
+   float: left;
+   color: #9a9a9a;
+}
+.control>.timing>span:last-of-type{
+   float: right;
+   color:#9a9a9a;
+}
+.control>.timing:after{
+	content:'';
+	display: block;
+	clear:both;
+}
+/*歌手*/
+.control>.singerName{
+	line-height: 1.4rem;
+	text-align: center;
+}
+.control>.singerName>span{
+	display: inline-block;
+	vertical-align: middle;
+}
+.control>.singerName>span>p{
+	line-height: 1.6;
+	color:white;
+}
+.control>.singerName>span>p:last-of-type{
+	color:#9a9a9a;
+}
+/*播放控制键*/
+.control>.c_btn{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 2rem;
+}
+.control #switch{
+	color:white;
+	font-size:1rem;
+}
+/*音量进度条*/
+.control>.voice_progress{
+	background:transparent;
+	line-height: 0.7rem;
+}
+.control>.voice_progress>span{
+	color:white;
+}
+/*自定义滑动条*/
+.control>.voice_progress>input{
+ display: inline-block;
+ height:0.1rem;
+ width:85%;
+ vertical-align: middle;
+ 
+  -webkit-appearance:none;
+  border-radius:10px;
+  background: -webkit-linear-gradient(#f74611, #f33708) no-repeat, #ddd;
+  background-size: 50% 100%;
+}
+ .control>.voice_progress>input::-webkit-slider-thumb{
+    -webkit-appearance:none;
+  }
+  /*滑道*/
+  .control>.voice_progress>input::-webkit-slider-runnable-track{
+    height:0.1rem;
+    border-radius:0.04rem;
+    /*box-shadow: 0 1px 1px #def3f8,inset 0 .125em .125em #0d1112;*/
+  }
+  .control>.voice_progress>input:focus{
+    outline:none;
+  }
+ /*滑块*/
+  .control>.voice_progress>input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 0.25rem;
+    width: 0.25rem;
+    margin-top: -0.05rem; /*使滑块超出轨道部分的偏移量相等*/
+    background: #ffffff; 
+    border-radius: 50%; /*外观设置为圆形*/
+    border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+    box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}
+/*其他按钮*/
+.control>.other_btn{
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 1.3rem;
+	width:100%;
+	padding:0 0.2rem;
+	box-sizing: border-box;
+}
+.control>.other_btn>span{
+	color:red;
+	font-size:0.5rem;
+}
